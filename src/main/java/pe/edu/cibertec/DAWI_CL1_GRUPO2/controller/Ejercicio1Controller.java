@@ -20,7 +20,7 @@ public class Ejercicio1Controller {
     @PostMapping("/calculardes")
     public String calculardes(@ModelAttribute("descuento") Ejercicio1 ejer, Model model){
         Double total=ejer.getPrecio()* ejer.getCantidad();
-        if(total>=200){
+        if(total>200){
             total=total*0.8;
         } else {
             total=total;
