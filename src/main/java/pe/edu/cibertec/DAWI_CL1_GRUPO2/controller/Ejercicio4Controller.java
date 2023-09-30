@@ -20,16 +20,21 @@ public class Ejercicio4Controller {
     public String calcularlim(@ModelAttribute("limite") Ejercicio4 ejer, Model model) {
 
         int limite = ejer.getLimite();
-        int cubo = 0;
-        int cuarta = 0;
+        String cubo = "";
+        String cuarta = "";
 
         for (int numero = 1; numero <= limite; numero++) {
-            cubo = numero * numero * numero;
-            cuarta = numero * numero * numero * numero;
+            if(limite==1){
+                cubo = cubo +(numero * numero * numero);
+                cuarta = cuarta +(numero * numero * numero * numero);
+            } else {
+                cubo = cubo + (numero * numero * numero) + "    ";
+                cuarta = cuarta + (numero * numero * numero * numero) + "   ";
+            }
         }
 
         model.addAttribute("verresultado", true);
-        model.addAttribute("resultado", "Número: " + limite + ", Cubo: " + cubo + ", Cuarta: " + cuarta);
+        model.addAttribute("resultado", "Número: " + limite + ", Cubo: " + cubo + "         Cuarta: " + cuarta);
         return "ejercicio4";
     }
 }
