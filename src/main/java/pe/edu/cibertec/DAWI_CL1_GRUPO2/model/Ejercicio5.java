@@ -10,6 +10,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ejercicio5 {
-        private double precioUnitario;
-        private int cantidadAdquirida;
+        private Double precioUnitario;
+        private Integer cantidadAdquirida;
 }
